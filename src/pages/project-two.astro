@@ -1,0 +1,68 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import projects from '../data/projects.json'; // Adjust path if needed
+import '../styles/product-detail.css'; // Import your CSS file
+
+const project = projects.find(project => project.slug === 'project-two');
+
+if (!project) {
+	// Handle the case where the project isn't found (optional)
+	throw new Error("Project 'project-one' not found in data.");
+}
+
+const SITE_TITLE = `Project: ${project.title} | Your Portfolio Title`;
+const SITE_DESCRIPTION = project.description;
+---
+
+<html lang="en">
+<head>
+	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+<body>
+	<Header />
+	<main id="project-detail">
+		<div class="container">
+			<h1 class="project-title">{project.title}</h1>
+			{project.image && (
+				<div class="project-image-container">
+					<img src={project.image} alt={project.title} class="project-image" />
+				</div>
+			)}
+			<p class="project-description">{project.description}</p>
+			{project.tags && (
+				<div class="project-tags">
+					{project.tags.map((tag) => (
+						<span class="tag">{tag}</span>
+					))}
+				</div>
+			)}
+			<div class="project-links">
+				{project.live_url && (
+					<a href={project.live_url} target="_blank" rel="noopener noreferrer" class="project-link">
+						Live Demo
+					</a>
+				)}
+				{project.repo_url && (
+					<a href={project.repo_url} target="_blank" rel="noopener noreferrer" class="project-link repo-link">
+						GitHub Repo
+					</a>
+				)}
+			</div>
+			{project.Reflection && (
+				<div class="reflection">
+					<h2 class="reflection-title">Reflection</h2>
+					<p class="reflection-content">{project.Reflection.split('\n').map((paragraph, index) => (
+						<Fragment key={index}>
+							{paragraph}
+							<br />
+						</Fragment>
+					))}</p>
+				</div>
+			)}
+		</div>
+	</main>
+	<Footer />
+</body>
+</html>

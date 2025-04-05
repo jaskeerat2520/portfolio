@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Connect 4",
+    "description": "Connect 4 game using c# and .net framework and using win loss algorithim for opponent",
+    "Reflection": "For the reflection I am discussing an Assignment for the class oop-2. This was my most\ncomplete assignment at Durham College. A big reason for this thinking is that we had a lot\nof time for this assignment. Very early on in the semester me and my partner were able to\ncome up with ideas. Also for this assignment you had to make diagrams explaining how\nthe classes were going to work and data flow diagrams. This made the coding part of the\nproject a lot easier. We made a connect 4 game with a really good algorithm as the other\nplayer. A big reason working on it was very smooth is because we had two people working\non the project so we were able to split the responsibilities easily. We made it so that I\nworked on the presentation layer and my group partner worked mainly on the opponent\nalgorithm. After working on these parts separately we then put it together so that the\npresentation layer was able to interact with the backend.\nThe connect 4 game was very challenging to win when playing on the hard level was\nsomething that we were extremely proud about. It worked If i were to make changes to it I\nwould have added online rankings ranked by who took the least amount of terms to win.\nAnother feature that I wish our group was able to do was animations. For example when a\nbutton is placed to place a token the token would just appear. I wish we were able to get\nan animation so it would slide into place.\nI learned a lot during this project. One of the most important things I learned was how to\nwork with github repos with someone else. We did mess up a couple of times at the\nbeginning because we learned how to use different git commands. This project also gave\nme a better understanding of object oriented programming in general as this was the\nbiggest project using oop I have worked on. I now understand how to make better classes.\nThis skill has also helped be in database classes because it really emphasizes how\nimportant normalization is.\nI think that this project proves my skill as a programmer because it proves understanding\nof different concepts of object-oriented programming. Also my understanding of how to\nwork with github with others was greatly improved. This is another skill that would be\nhelpful. Another part of the project that showed my skill as a programmer is\nunderstanding game theory. Although I didn't work on this part directly I was able to\nunderstand how game theory works because of this project we used a min max algorithm\nfor the opponent algorithm.",
+    "repo_url": "https://github.com/jaskeerat2520/Connect4",
+    "tags": ["c#", ".net"],
+    "slug": "project-one"
+  },
+  {
+    "title": "Maze Crusarders",
+   "description": "A Pac-Man style mobile game developed using Flutter. The objective was to defeat the ghosts and find the exit.",
+  "Reflection": "For this assignment, the project was called Maze Marauders. This game is a Pac-Man style mobile game. The objective was to kill the ghosts and exit the map. Our group made this game using Flutter.\n\nWhat worked well was that we were able to work together really well. The biggest issue was with testing the project. It was an Android app, so we had to run an emulator for it, but some of us in the group were not able to get it working. Although we had that technical issue, we were still able to work together by having each person do two pages and then putting the final project together at the end.\n\nWhat worked was the gameplay. The game worked well, but it didn't look good. If we were to go back, I wish we had made a more appealing game. Also, I wanted to be able to have an online leaderboard for the game, but I wasn't able to get that to work.\n\nI learned how to put together an Android app. After completing this project, I was confident in my abilities to make Android apps. I think that if I had to make a new one in the near future, I would be a lot better than from this one because I learned a lot from it. Mobile development has the scariest looking code in my opinion, but now I am confident in my abilities.\n\nI think that this project demonstrated my ability to work with others even when there is a technical issue. Also, I think that this project shows my mobile development skills.",    "repo_url": "https://github.com/jaskeerat2520/Maze-Marauders",
+    "repo_url" : "https://github.com/jaskeerat2520/Maze-Marauders",
+    "tags": ["flutter"],
+    "slug": "project-two"
+  },
+  {
+    "title": "SushiBaiKiyoshih",
+    "description": "An DBMS system for a sushi store along with an crud web application",
+    "repo_url": "https://github.com/rijanbdahal/SushiBaiKiyoshi",
+    "tags": ["postgresql", "node", "javascript" , "react"],
+    "slug": "project-three",
+    "Reflection": "This was the most interesting project that we had to do this is because \n it was the largest crud app that I have done with others so that it made communication a must. The Project is based of an use case\n given in class we were asked to make a dbms system for an sushi store. We had to throuly plan the tables by making erd diagrams \nand we came up with a system that an sushi store can do what ever from adding new menu items\n to tracking and receivng payment for orders"
+  },
+  {
+    "title": "Quizy",
+    "description": "Using LLM's to make Quizes",
+    "repo_url": "https://github.com/jaskeerat2520/quizzy",
+    "tags": ["supabase", "javascript", "react"],
+    "slug": "project-four",
+    "Reflection": "An web app that allows users to upload documents to generate quizes \n I decided to make this project because one of my proffessor talked about it in class once\n that's where the idead came from. The app will allow you to create and share quizes"
+  }
+]

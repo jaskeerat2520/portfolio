@@ -1,0 +1,165 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import projects from '../../data/projects.json'; // Adjust path if needed
+
+export async function getStaticPaths() {
+	return projects.map((project) => ({
+		params: { slug: project.slug },
+		props: { project },
+	}));
+}
+
+const { project } = Astro.props;
+const SITE_TITLE = `Project: ${project.title} | Your Portfolio Title`; // Dynamic title
+const SITE_DESCRIPTION = project.description;
+---
+
+<html lang="en">
+<head>
+	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	<style>
+		#project-detail {
+			background-color: #f7f7f7;
+			padding: 40px 20px;
+		}
+
+		.container {
+			max-width: 960px;
+			margin: 0 auto;
+		}
+
+		.project-title {
+			font-size: 2.5em;
+			font-weight: bold;
+			color: #333;
+			margin-bottom: 20px;
+			text-align: center;
+		}
+
+		.project-image-container {
+			width: 100%;
+			max-height: 400px;
+			overflow: hidden;
+			border-radius: 8px;
+			margin-bottom: 20px;
+		}
+
+		.project-image {
+			width: 100%;
+			height: auto;
+			display: block;
+			object-fit: cover;
+		}
+
+		.project-description {
+			color: #555;
+			font-size: 1.1em;
+			line-height: 1.6;
+			margin-bottom: 25px;
+		}
+
+		.project-tags {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px;
+			margin-bottom: 20px;
+		}
+
+		.tag {
+			background-color: #e0f2f7;
+			color: #00acc1;
+			border-radius: 12px;
+			padding: 5px 10px;
+			font-size: 0.9em;
+		}
+
+		.project-links {
+			display: flex;
+			gap: 15px;
+			margin-bottom: 30px;
+		}
+
+		.project-link {
+			display: inline-block;
+			background-color: #007bff;
+			color: #fff;
+			padding: 12px 20px;
+			border-radius: 5px;
+			text-decoration: none;
+			font-size: 1em;
+			transition: background-color 0.3s ease;
+		}
+
+		.project-link:hover {
+			background-color: #0056b3;
+		}
+
+		.repo-link {
+			background-color: #6c757d;
+		}
+
+		.repo-link:hover {
+			background-color: #545b62;
+		}
+
+		.reflection-title {
+			font-size: 1.8em;
+			font-weight: bold;
+			color: #333;
+			margin-bottom: 15px;
+		}
+
+		.reflection-content {
+			color: #777;
+			line-height: 1.5;
+		}
+	</style>
+</head>
+<body>
+	<Header />
+	<main id="project-detail">
+		<div class="container">
+			<h1 class="project-title">{project.title}</h1>
+			{project.image && (
+				<div class="project-image-container">
+					<img src={project.image} alt={project.title} class="project-image" />
+				</div>
+			)}
+			<p class="project-description">{project.description}</p>
+			{project.tags && (
+				<div class="project-tags">
+					{project.tags.map((tag) => (
+						<span class="tag">{tag}</span>
+					))}
+				</div>
+			)}
+			<div class="project-links">
+				{project.live_url && (
+					<a href={project.live_url} target="_blank" rel="noopener noreferrer" class="project-link">
+						Live Demo
+					</a>
+				)}
+				{project.repo_url && (
+					<a href={project.repo_url} target="_blank" rel="noopener noreferrer" class="project-link repo-link">
+						GitHub Repo
+					</a>
+				)}
+			</div>
+			{project.Reflection && (
+				<div class="reflection">
+					<h2 class="reflection-title">Reflection</h2>
+					<p class="reflection-content">{project.Reflection.split('\n').map((paragraph, index) => (
+						<Fragment key={index}>
+							{paragraph}
+							<br />
+						</Fragment>
+					))}</p>
+				</div>
+			)}
+		</div>
+	</main>
+	<Footer />
+</body>
+</html>
